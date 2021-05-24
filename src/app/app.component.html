@@ -1,0 +1,28 @@
+<mat-toolbar class="toolbar-background">
+  <a class="title" href="/">{{ title }}</a>
+  <button
+    mat-raised-button
+    *ngIf="loginDisplay"
+    class="webApiButton"
+    routerLink="/dataPage"
+    [disabled]="!userHasPermission"
+  >
+    Web API
+  </button>
+  <div class="toolbar-spacer"></div>
+  <div *ngIf="loginDisplay">
+    <app-profile></app-profile>
+  </div>
+
+  <!-- <button mat-button *ngIf="loginDisplay" (click)="editProfile()">Edit Profile</button> -->
+  <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">
+    Login
+  </button>
+  <button mat-raised-button *ngIf="loginDisplay" (click)="logout()">
+    Logout
+  </button>
+</mat-toolbar>
+<div class="container">
+  <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+  <router-outlet *ngIf="!isIframe"></router-outlet>
+</div>

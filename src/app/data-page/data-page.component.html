@@ -1,0 +1,8 @@
+<div class="welcome-msg my-4">
+  <span>User has permission to access this page!</span>
+</div>
+<div *ngIf="data">
+  <div>Name: {{ data?.name }}</div>
+  <div>Account: {{ data?.account }}</div>
+  <div>Balance: {{ data?.balance }}</div>
+</div>

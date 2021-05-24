@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="error-template row">
+    <div *ngIf="isUserLoggedIn" class="welcome-msg">
+      <i class="fa fa-exclamation-triangle fa-4x"></i>
+      <h1 class="pl-3">ACCESS DENIED</h1>
+    </div>
+    <div class="error-details welcome-msg">
+      Sorry, your access is refused due to security reasons.
+    </div>
+    <div *ngIf="isUserLoggedIn" class="error-actions col-md-12 welcome-msg">
+      <a mat-button routerLink="/" class="home"
+        ><span><i class="fa fa-home"></i></span>TAKE ME HOME</a
+      >
+    </div>
+  </div>
+</div>

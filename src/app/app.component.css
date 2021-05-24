@@ -1,0 +1,15 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+a.title {
+  color: white;
+}
+.webApiButton {
+  color: white !important;
+  background-color: dodgerblue !important;
+  margin-left: 15px;
+}
+.mat-toolbar {
+  background-color: darkblue;
+}

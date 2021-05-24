@@ -1,0 +1,21 @@
+.welcome-msg {
+  font-size: 22px;
+  line-height: 115%;
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center;
+  font-weight: bold;
+  color: darkblue;
+  margin-top: 50px;
+}
+
+.info-msg {
+  width: 40vw;
+  line-height: 22px;
+  margin: 0 auto;
+  font-size: 15px;
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center;
+  margin-top: 25px;
+}

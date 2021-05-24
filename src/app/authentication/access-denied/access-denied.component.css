@@ -1,0 +1,10 @@
+.welcome-msg {
+  font-size: 22px;
+  line-height: 115%;
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center;
+  font-weight: bold;
+  color: darkblue;
+  margin-top: 50px;
+}
