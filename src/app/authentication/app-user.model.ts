@@ -11,9 +11,9 @@ export class AppUser {
         : claims && claims.given_name
         ? claims.name
         : '';
-    this.emailAddress = claims ? claims['signInNames.emailAddress'] : '';
+    this.emailAddress = claims ? claims['emailAddress'] : '';
     this.permissions = claims ? claims.groups : [];
-    this.userId = claims ? claims.oid : null;
+    this.userId = claims ? claims.sub : null;
   }
 }
 

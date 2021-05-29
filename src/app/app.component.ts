@@ -60,6 +60,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.isIframe = window !== window.parent && !window.opener;
     this.setLoginDisplay();
     // BroadcastService exposes a way to subscribe to messages regarding msal activity
+
+    // If you wish to perform functions following redirects
+    // subscribe to the inProgress$ observable, filtering for InteractionStatus.None.
+    // This will ensure that there are no interactions in progress when performing the functions
     this.msalBroadcastService.inProgress$
       .pipe(
         filter(
@@ -166,6 +170,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
     this.identityService.currentUserSubject.next(new AppUser(null));
     this.identityService.setLoggedInParam(false);
+    localStorage.removeItem(LOCAL_STORAGE.CURRENT_USER_KEY);
   }
 
   ngOnDestroy(): void {

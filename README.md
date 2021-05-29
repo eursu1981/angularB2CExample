@@ -10,6 +10,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - Ensure [all pre-requisites](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md) have been completed to run msal-angular.
 
+The @azure/msal-angular package is available on NPM:
+npm install @azure/msal-browser @azure/msal-angular@latest
+
 ### B2C App Registration
 
 This sample comes with a pre-registered application for demo purposes. If you would like to use your own **Azure AD B2C** tenant and application, follow the steps below:

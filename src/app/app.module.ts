@@ -79,7 +79,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
 }
 // mapping table of endpoints and scopes that we want to create access tokens for.
 // The idea here is that every time a request is made to one of the provided protected resources
-//in that mapping table, the MSAL library is acquiring a matching access token in the background and
+// in that mapping table, the MSAL library is acquiring a matching access token in the background and
 //passes it into the request’s authorization header
 export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
   const protectedResourceMap = new Map<string, Array<string>>();
@@ -146,6 +146,7 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     MsalBroadcastService,
     AuthGuard,
   ],
+  // When using redirects with MSAL, it is mandatory to handle redirects with either the MsalRedirectComponent or handleRedirectObservable
   bootstrap: [AppComponent, MsalRedirectComponent],
 })
 export class AppModule {}

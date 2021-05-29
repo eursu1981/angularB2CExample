@@ -50,14 +50,13 @@ export class AuthGuard implements CanActivate {
       } else {
         var account = this.authService.instance.getAllAccounts()[0];
         if (account) {
-          this.authService
+          this.authService.instance
             .acquireTokenSilent(<SilentRequest>{
               correlationId: environment.adb2cConfig.spaClientId,
               authority: environment.adb2cConfig.signInSignUpAuthority,
               forceRefresh: true,
               account: account,
             })
-            .toPromise()
             .then((result) => {
               if (result?.account) {
                 this.authService.instance.setActiveAccount(result?.account);

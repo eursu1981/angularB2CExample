@@ -4,22 +4,22 @@
 
 export const environment = {
   production: false,
-  authorityDomain: 'devartcoreorg.b2clogin.com',
+  authorityDomain: 'test.b2clogin.com',
   scopes: [
-    'https://devartcoreorg.onmicrosoft.com/f3933a3b-1a4a-480c-baac-5038139d3492/read',
+    'https://test.onmicrosoft.com/{id}/read',
   ],
   dataServiceConfig: {
-    restApiServerUrl: 'https://dac-api-management.azure-api.net/demo',
-    ocpApimSubscriptionKey: 'e37d852393f1465daea854d2067e2b90',
+    restApiServerUrl: 'https://test.azure-api.net/demo',
+    ocpApimSubscriptionKey: '',
   },
   adb2cConfig: {
-    spaClientId: '2be63142-fc11-44ac-9ad1-e3d211ee4f80',
+    spaClientId: '',
     signInSignUpAuthority:
-      'https://devartcoreorg.b2clogin.com/devartcoreorg.onmicrosoft.com/B2C_1A_signup_signin',
+      'https://test.b2clogin.com/test.onmicrosoft.com/B2C_1A_signup_signin',
     signInAuthority:
-      'https://devartcoreorg.b2clogin.com/devartcoreorg.onmicrosoft.com/B2C_1_signin',
+      'https://test.b2clogin.com/test.onmicrosoft.com/B2C_1_signin',
     signUpAuthority:
-      'https://devartcoreorg.b2clogin.com/devartcoreorg.onmicrosoft.com/B2C_1_signup',
+      'https://test.b2clogin.com/test.onmicrosoft.com/B2C_1_signup',
   },
 };
 
