@@ -1,4 +1,4 @@
-export const AppPermission = {
-  salesPermission: 'Sales',
-  businessPartnerPermission: 'businessPartner',
+export const AppRoles = {
+  sales: 'Sales',
+  businessPartner: 'businessPartner',
 };

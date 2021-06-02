@@ -181,7 +181,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private hasPermissions(): boolean {
     var requiredPermissions = this.router.config.find((r) =>
       r.path?.includes('dataPage')
-    )?.data?.permissions;
+    )?.data?.roles;
     return requiredPermissions && requiredPermissions.length >= 0
       ? this.identityService.userHasPermissions(requiredPermissions)
       : false;

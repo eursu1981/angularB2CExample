@@ -44,9 +44,7 @@ export class AuthGuard implements CanActivate {
   ): Promise<boolean> {
     return new Promise((res, rej) => {
       if (this.authService.instance.getActiveAccount()) {
-        res(
-          this.identityService.userHasPermissions(targetRoute.data.permissions)
-        );
+        res(this.identityService.userHasPermissions(targetRoute.data.roles));
       } else {
         var account = this.authService.instance.getAllAccounts()[0];
         if (account) {
@@ -60,7 +58,6 @@ export class AuthGuard implements CanActivate {
             .then((result) => {
               if (result?.account) {
                 this.authService.instance.setActiveAccount(result?.account);
-                alert('You were silently logged in !');
                 this.identityService.setCurrentUser(
                   new AppUser(result?.account.idTokenClaims)
                 );
@@ -75,7 +72,7 @@ export class AuthGuard implements CanActivate {
 
                 res(
                   this.identityService.userHasPermissions(
-                    targetRoute.data.permissions
+                    targetRoute.data.roles
                   )
                 );
               }

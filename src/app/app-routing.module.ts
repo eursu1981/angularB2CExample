@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { MsalGuard } from '@azure/msal-angular';
 import { DataPageComponent } from './data-page/data-page.component';
 import { AuthGuard } from './authentication/auth-guard';
-import { AppPermission } from './authentication/app-permissions';
+import { AppRoles } from './authentication/app-permissions';
 import { AccessDeniedComponent } from './authentication/access-denied/access-denied.component';
 
 const routes: Routes = [
@@ -13,10 +13,7 @@ const routes: Routes = [
     component: DataPageComponent,
     canActivate: [MsalGuard, AuthGuard],
     data: {
-      permissions: [
-        // AppPermission.salesPermission,
-        // AppPermission.businessPartnerPermission,
-      ],
+      roles: [AppRoles.sales, AppRoles.businessPartner],
     },
   },
   { path: 'accessdenied', component: AccessDeniedComponent },
